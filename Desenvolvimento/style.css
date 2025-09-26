@@ -173,8 +173,25 @@ ul {
 main {
     padding-top: 50px; 
     min-height: 100vh;
-    background-color: #0a0a0a;
-    text-align: center;
+    background-color: #ffffff;
+    text-align:;
+    color: #000;
+}
+
+.Sobre{
+    text-align: left;
+    padding-left: 10%;
+    padding-top: 50px;
+    width: 700px;
+    height: 50%;
+
+    h2{
+        font-size: 40px;
+    }
+
+    p{
+        padding-top: 10px;
+    }
 }
 
 /* -------------------- RESPONSIVIDADE -------------------- */
