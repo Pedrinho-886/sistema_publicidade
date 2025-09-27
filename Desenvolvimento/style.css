@@ -174,16 +174,25 @@ main {
     padding-top: 50px; 
     min-height: 100vh;
     background-color: #ffffff;
-    text-align:;
     color: #000;
+}
+
+.pai-sobre{
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 450px);
+    gap: 40px;
+    max-width: 1300px;
+    margin: auto;
+    align-items: center;
+    padding-top: 130px;
+    gap: 70px;
 }
 
 .Sobre{
     text-align: left;
-    padding-left: 10%;
-    padding-top: 50px;
+    padding-left: 2%;
     width: 700px;
-    height: 50%;
+    max-width: none;
 
     h2{
         font-size: 40px;
@@ -191,7 +200,24 @@ main {
 
     p{
         padding-top: 10px;
+        font-size: 20px;
     }
+}
+
+
+.imagem-sobre{
+    max-width: 469px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        img{
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            align-items: center;
+        }
 }
 
 /* -------------------- RESPONSIVIDADE -------------------- */
