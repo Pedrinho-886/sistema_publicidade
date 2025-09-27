@@ -236,4 +236,44 @@ main {
     .hero-content h1 {
         font-size: 3em; 
     }
+
+    /* Ajusta o container principal para empilhar o conteúdo */
+  .pai-sobre {
+    /* Muda para uma única coluna */
+    grid-template-columns: 1fr; 
+    
+    /* Reduz o padding superior e o espaçamento (gap) */
+    padding-top: 50px; 
+    gap: 30px; 
+    
+    /* Adiciona padding lateral para que o conteúdo não toque as bordas da tela */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .Sobre {
+    text-align: center;
+    padding-left: 0;
+    
+    /* Remove a largura fixa e deixa o elemento ocupar o espaço disponível */
+    width: auto; 
+    max-width: 100%;
+  }
+
+  /* Ajusta os títulos e parágrafos */
+  .Sobre h2 {
+    font-size: 32px; 
+  }
+
+  .Sobre p {
+    
+    font-size: 18px; 
+  }
+  
+  /* Ajusta o container da imagem */
+  .imagem-sobre {
+    /* Remove a largura máxima para se adaptar melhor e garante a centralização */
+    max-width: 100%;
+  }
+
 }
