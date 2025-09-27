@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-:root {
-    --primary-gradient: linear-gradient(to right, #00c6ff, #0072ff); /* Um gradiente azul para botões */
-    --button-gradient: linear-gradient(to right, #2ecc71, #3498db); /* Gradiente verde-azul para o botão ENTRAR */
-    --glass-background: rgba(255, 255, 255, 0.15); /* Fundo translúcido */
+:root{
+    /* Mantenho as suas variáveis, ajustando o gradiente principal para o botão de login */
+    --primary-gradient: linear-gradient(to right, #00c6ff, #0072ff); 
+    --button-gradient: linear-gradient(to right, #2cc26a, #318ecc); /* Gradiente verde-azul para o botão ENTRAR */
+    --glass-background: rgba(255, 255, 255, 0.11); /* Fundo translúcido (um pouco mais opaco para melhor leitura) */
     --border-color: rgba(255, 255, 255, 0.3); /* Borda sutil */
     --text-color: #f0f2f5; /* Cor de texto padrão (claro para contraste) */
-    --input-bg: rgba(255, 255, 255, 0.9); /* Fundo claro para inputs */
+    --input-bg: rgba(255, 255, 255, 0.9); /* Fundo quase branco para inputs */
     --placeholder-color: #888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -32,14 +39,12 @@ body {
     /* Adicionei a imagem de fundo aqui */
     background-image: url('pessoas-trabalhando-juntas-em-um-estudio-de-animacao.jpg'); 
     background-size: cover; 
-    background-position: center; 
-    filter: blur(5px) brightness(0.7); /*efeito de desfoque*/
+    background-position: center 30%; 
+    filter: blur(0.6px) brightness(0.6); /*efeito de desfoque e claridade img*/
     z-index: -1;/*Garante que fique atrás de todo o conteúdo */
 }
 
 .login-container {
-    position: relative;
-    z-index: 1; /* Garante que o container de login fique sobre o fundo */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,41 +52,44 @@ body {
     height: 100%;
 }
 
+/* Estilo do Box de Login (Glassmorphism) */
 .login-box {
-    background: var(--glass-background);
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
     padding: 40px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur(10px); /* Efeito de vidro desfocado */
-    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    background: var(--glass-background);
+    border: 1px solid var(--border-color);
+    /* Efeito de desfoque (O Coração do Glassmorphism) */
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 380px; /* Largura ajustável para a caixa de login */
-    color: var(--text-color);
+    width: 90%;
+    max-width: 400px;
+    transition: all 0.3s ease;
 }
 
 .login-box h1 {
-    font-size: 2.5em;
+    font-weight: 600;
     margin-bottom: 30px;
-    font-weight: 700;
-    color: #f0f2f5; /* Cor para o título */
+    color: #fff; /* Título em branco para se destacar */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Estilos dos campos de Input */
 .input-group {
-    margin-bottom: 20px;
     position: relative;
+    margin-bottom: 25px;
 }
 
 .input-group input {
-    width: calc(100% - 20px); /* Ajusta a largura para padding */
-    padding: 15px 10px;
+    width: 100%;
+    padding: 14px 15px;
     border: none;
     border-radius: 10px;
     background-color: var(--input-bg);
-    color: #333; /* Cor do texto dentro do input */
-    font-size: 1em;
+    color: #333;
+    font-size: 16px;
     outline: none;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s;
 }
 
 .input-group input::placeholder {
@@ -89,18 +97,95 @@ body {
 }
 
 .input-group input:focus {
-    box-shadow: 0 0 0 3px rgba(0, 114, 255, 0.4); /* Sombra azul ao focar */
+    box-shadow: 0 0 0 2px var(--primary-gradient); /* Sutil efeito de foco */
 }
 
-.password-group .toggle-password {
+/* Ícone de olho na senha */
+.password-group i {
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
+    color: var(--placeholder-color);
     cursor: pointer;
-    color: #666; /* Cor do ícone de olho */
-    font-size: 0.9em;
+    transition: color 0.2s;
 }
 
+/* Estilo do Botão de Login */
 .login-button {
-    width: 1
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    /* Aplica o gradiente moderno */
+    background-image: var(--button-gradient);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Links Adicionais (Esqueceu a senha / Criar conta) */
+.links-adicionais {
+    margin-top: 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.links-adicionais a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.links-adicionais a:hover {
+    color: #a0c4ff;
+}
+
+.links-adicionais span {
+    color: var(--border-color);
+}
+
+/* Login Social */
+.social-text {
+    margin: 30px 0 15px 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--glass-background);
+    border: 1px solid var(--border-color);
+    color: white;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
