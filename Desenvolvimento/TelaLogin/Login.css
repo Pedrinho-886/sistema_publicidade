@@ -1,191 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-:root{
-    /* Mantenho as suas variáveis, ajustando o gradiente principal para o botão de login */
-    --primary-gradient: linear-gradient(to right, #00c6ff, #0072ff); 
-    --button-gradient: linear-gradient(to right, #2cc26a, #318ecc); /* Gradiente verde-azul para o botão ENTRAR */
-    --glass-background: rgba(255, 255, 255, 0.11); /* Fundo translúcido (um pouco mais opaco para melhor leitura) */
-    --border-color: rgba(255, 255, 255, 0.3); /* Borda sutil */
-    --text-color: #f0f2f5; /* Cor de texto padrão (claro para contraste) */
-    --input-bg: rgba(255, 255, 255, 0.9); /* Fundo quase branco para inputs */
-    --placeholder-color: #888;
+:root {
+  --primary-color: #000;
+  --text-color: #fff;
+  --accent-color: #00ff8c;
+  --font-family: 'Poppins', sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body.login-page {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #333; /* Fallback caso a imagem não carregue */
-    overflow: hidden; /* Para garantir que o fundo ocupe toda a tela e não haja scroll indesejado */
-}
-
-/* Estilo para a imagem de fundo */
+/* Fundo com imagem escura */
 .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Adicionei a imagem de fundo aqui */
-    background-image: url('pessoas-trabalhando-juntas-em-um-estudio-de-animacao.jpg'); 
-    background-size: cover; 
-    background-position: center 30%; 
-    filter: blur(0.6px) brightness(0.6); /*efeito de desfoque e claridade img*/
-    z-index: -1;/*Garante que fique atrás de todo o conteúdo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('fundo.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  filter: brightness(0.6);
+  z-index: -1;
 }
+
+/* Container principal */
 
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 20px;
 }
 
-/* Estilo do Box de Login (Glassmorphism) */
+/* Caixa de login sem fundo branco */
 .login-box {
-    padding: 40px;
-    border-radius: 20px;
-    background: var(--glass-background);
-    border: 1px solid var(--border-color);
-    /* Efeito de desfoque (O Coração do Glassmorphism) */
-    backdrop-filter: blur(10px); 
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    transition: all 0.3s ease;
+  background-color: rgba(50, 48, 48, 0.68); /* fundo escuro sólido, sem translucidez */
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 .login-box h1 {
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: #fff; /* Título em branco para se destacar */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: var(--text-color);
 }
 
-/* Estilos dos campos de Input */
+/* Inputs */
 .input-group {
-    position: relative;
-    margin-bottom: 25px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .input-group input {
-    width: 100%;
-    padding: 14px 15px;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--input-bg);
-    color: #333;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  background-color: #1c1c1c;
+  color: var(--text-color);
 }
 
 .input-group input::placeholder {
-    color: var(--placeholder-color);
+  color: #999;
 }
 
-.input-group input:focus {
-    box-shadow: 0 0 0 2px var(--primary-gradient); /* Sutil efeito de foco */
+/* Olho da senha */
+.password-group .toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
 }
 
-/* Ícone de olho na senha */
-.password-group i {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--placeholder-color);
-    cursor: pointer;
-    transition: color 0.2s;
-}
+/* Botão de login */
 
-/* Estilo do Botão de Login */
 .login-button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: white;
-    /* Aplica o gradiente moderno */
-    background-image: var(--button-gradient);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+  margin: 20px auto;
+  padding: 13px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  background-image: var(--button-gradient);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .login-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background-color: #00e67f;
 }
 
-/* Links Adicionais (Esqueceu a senha / Criar conta) */
-.links-adicionais {
-    margin-top: 20px;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
+/* Links */
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 0.9em;
 }
 
-.links-adicionais a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s;
+.links a {
+  color: var(--accent-color);
+  transition: color 0.3s;
 }
 
-.links-adicionais a:hover {
-    color: #a0c4ff;
-}
-
-.links-adicionais span {
-    color: var(--border-color);
+.links a:hover {
+  color: #00e67f;
 }
 
 /* Login Social */
-.social-text {
-    margin: 30px 0 15px 0;
-    font-size: 14px;
-    opacity: 0.8;
+.social-login {
+  margin-top: 30px;
 }
 
-.social-login {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+.social-login span {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .social-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--glass-background);
-    border: 1px solid var(--border-color);
-    color: white;
-    font-size: 18px;
-    transition: background 0.3s, transform 0.2s;
+  width: 40px;
+  height: 40px;
+  background-color: #1c1c1c;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .social-icon:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
+  background-color: var(--accent-color);
+  color: #000;
+  transform: scale(1.1);
 }
