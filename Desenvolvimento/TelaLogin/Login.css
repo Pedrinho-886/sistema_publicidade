@@ -166,3 +166,22 @@ body.login-page {
   color: #000;
   transform: scale(1.1);
 }
+
+.mensagem-membro {
+  margin-top: 2.5rem; /* equivalente ao mt-10 do Tailwind */
+  text-align: center;
+  font-size: 0.875rem; /* equivalente a text-sm */
+  line-height: 1.5;    /* ajusta o espaçamento entre linhas */
+  color: #ffffff;      /* equivalente ao text-gray-500 */
+}
+
+.mensagem-membro a.link-teste {
+  font-weight: 600;
+  color: #00e67f;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.mensagem-membro a.link-teste:hover {
+  color: #15bb70;
+}
