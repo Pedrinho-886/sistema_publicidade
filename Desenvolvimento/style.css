@@ -177,6 +177,8 @@ main {
     color: #000;
 }
 
+/*Aqui começa a parte de Seções - Sobre nós*/
+
 .pai-sobre{
     display: grid;
     grid-template-columns: 1fr minmax(300px, 450px);
@@ -219,6 +221,176 @@ main {
             align-items: center;
         }
 }
+
+
+/* Aqui para quem serve*/
+
+.paraquem {
+    max-width: 1200px; 
+    margin: 50px auto;
+    padding: 0 20px; 
+    padding-top: 200px;
+    color: var(--text-color); 
+}
+
+.paraquem h2 {
+    font-size: 2.5em;
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    margin-left: 300px;
+    background-color: #000;
+    width: 450px;
+    border-radius: 5px;
+}
+
+
+.box_carrosel {
+    display: flex; /* Alinha todos os boxes lado a lado */
+    overflow-x: auto; /* PERMITE a rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Faz os boxes "pararem" na posição exata */
+    gap: 30px; 
+    padding-bottom: 20px; 
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}
+
+
+/* Estilo individual para cada Box/Card */
+.topico_box {
+    /* Dimensões e Estilo do Card */
+    flex: 0 0 350px; /* Define o tamanho: NÃO cresce, NÃO encolhe, LARGURA de 350px */
+    padding: 30px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 255, 140, 0.2);
+    scroll-snap-align: start;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topico_box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 255, 140, 0.15); /* Sombra com a cor de destaque */
+}
+
+.titulo_box{
+    color: var(--accent-color);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(0, 255, 140, 0.5);
+    
+}
+
+.topico_box p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Aqui é a  apresentação dos planos de assinatura*/
+
+.subtitulo_plano{
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Lista de Recursos (Features) */
+.caract_plano{
+    text-align: left;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Faz a lista crescer para ocupar o espaço restante */
+}
+
+.caract_plano li {
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    font-size: 1.05em;
+}
+
+.verificado {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.desabilitado {
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+}
+.desabilitado .verificado {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* Destaque para o Plano Mais Popular (.featured) */
+.apresenta {
+    /* Cor de destaque total */
+    background-color: var(--accent-color); 
+    color: var(--primary-color); /* Texto escuro no fundo claro */
+    transform: scale(1.05); /* Faz o card ser um pouco maior */
+    border-color: var(--accent-color);
+    position: relative;
+}
+
+.apresenta .titulo_preco {
+    color: var(--primary-color); 
+}
+
+.apresenta .preco_plano {
+    color: var(--primary-color);
+}
+
+.apresenta .preco_plano span {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.apresenta .subtitulo_plano,
+.apresenta .caract_plano li,
+.apresenta .desabilitado{
+    color: var(--primary-color);
+}
+
+.apresenta .caract_plano li {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.apresenta .verificado {
+    color: var(--primary-color); 
+}
+
+.apresenta .btn-primary {
+    /* Inverte o estilo do botão principal para o card em destaque */
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    font-size: 1.1em;
+}
+
+.tag_carac {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 5px 15px;
+    border-radius: 0 10px 0 10px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* Garante que o botão fique na parte inferior do card */
+.preco_caract .btn {
+    margin-top: auto; 
+    width: 100%;
+    justify-content: center;
+    font-weight: 700;
+    padding: 15px;
+}
+
 
 /* -------------------- RESPONSIVIDADE -------------------- */
 @media (max-width: 900px) {
@@ -276,4 +448,30 @@ main {
     max-width: 100%;
   }
 
+  .box_carrosel {
+        /* Desabilita a rolagem horizontal */
+        overflow-x: hidden; 
+        
+        /* Muda a direção para empilhar os cards verticalmente */
+        flex-direction: column; 
+        gap: 25px; 
+        align-items: center; 
+        padding: 0 20px 20px 20px;
+    }
+    
+    /* 2. Ajustar a Largura dos Cards (Boxes) */
+    .topico_box {
+        flex: 1 1 100%; 
+        max-width: 450px; 
+        scroll-snap-align: none; 
+    }
+
+    .paraquem h2 {
+        margin: auto;
+        margin-bottom: 30px;
+        
 }
+
+
+}
+
