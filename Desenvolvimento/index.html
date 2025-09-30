@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
@@ -131,5 +132,53 @@
     </div>
 </section>
     </aside>
+
+    <footer>
+        <section class="secao-fale-conosco">
+    <div class="container">
+        <h2 class="titulo-secao">Fale Conosco</h2>
+        <p class="subtitulo-secao">Tem alguma dúvida ou gostaria de saber mais sobre o Nexus? Envie-nos uma mensagem!</p>
+
+        <div class="conteudo-fale-conosco">
+            <div class="info-contato">
+                <h3>Informações de Contato</h3>
+                <p><i class="icone-contato fas fa-envelope"></i> email@nexus.com.br</p>
+                <p><i class="icone-contato fas fa-phone"></i> (XX) XXXX-XXXX</p>
+                <p><i class="icone-contato fas fa-map-marker-alt"></i> Rua da Inovação, 123 - Cidade Criativa, BR</p>
+                
+                <div class="redes-sociais">
+                    <a href="#" class="icone-social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="icone-social"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="icone-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="icone-social"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="formulario-contato">
+                <h3>Envie Sua Mensagem</h3>
+                <form action="#" method="POST">
+                    <div class="grupo-campo">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="email">Seu E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="mensagem">Sua Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar-contato">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    </footer>
 </body>
 </html>
