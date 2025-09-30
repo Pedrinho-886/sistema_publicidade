@@ -434,8 +434,8 @@ main {
 }
 
 .btn-plano--secondary:hover {
-    background-color: var(--accent-color);hover */
-    color: var(--primary-color);/
+    background-color: var(--accent-color);
+    color: var(--primary-color);
     transform: translateY(-2px);
 }
 
@@ -505,6 +505,232 @@ main {
     letter-spacing: 0.5px;
 }
 
+/* --- Seção Fale Conosco --- */
+.secao-fale-conosco {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+    color: var(--text-color); 
+    text-align: center;
+}
+
+.secao-fale-conosco .titulo-secao {
+    font-size: 3em;
+    color: var(--accent-color); 
+    margin-bottom: 20px;
+}
+
+.secao-fale-conosco .subtitulo-secao {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.conteudo-fale-conosco {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Informações de Contato --- */
+.info-contato {
+    flex: 1; /* Ocupa o espaço disponível */
+    min-width: 300px;
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--shadow-dark);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--border-light-on-dark);
+}
+
+.info-contato h3 {
+    font-size: 1.8em;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.info-contato p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+}
+
+.info-contato .icone-contato {
+    color: var(--accent-color);
+    margin-right: 15px;
+    font-size: 1.3em;
+}
+
+.redes-sociais {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.redes-sociais .icone-social {
+    color: var(--text-color);
+    font-size: 1.8em;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.redes-sociais .icone-social:hover {
+    color: var(--accent-color); /* Mudar para verde neon no hover */
+    transform: translateY(-5px);
+}
+
+/* --- Formulário de Contato --- */
+.formulario-contato {
+    flex: 1.5;
+    min-width: 300px;
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--shadow-dark);
+    text-align: left;
+    border: 1px solid var(--border-light-on-dark);
+}
+
+.formulario-contato h3 {
+    font-size: 1.8em;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.grupo-campo {
+    margin-bottom: 20px;
+}
+
+.grupo-campo label {
+    display: block;
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.grupo-campo input[type="text"],
+.grupo-campo input[type="email"],
+.grupo-campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(0, 255, 140, 0.3); 
+    border-radius: 8px;
+    background-color: #0d0d0d;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grupo-campo input::placeholder,
+.grupo-campo textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5); 
+}
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 255, 140, 0.3); /
+}
+
+.btn-enviar-contato {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-enviar-contato:hover {
+    background-color: #00d070; 
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 1024px) {
+    .secao-fale-conosco .titulo-secao {
+        font-size: 2.5em;
+    }
+    .secao-fale-conosco .subtitulo-secao {
+        font-size: 1.1em;
+        margin-bottom: 40px;
+    }
+    .conteudo-fale-conosco {
+        flex-direction: column; /* Empilha as colunas */
+        align-items: center; /* Centraliza as caixas empilhadas */
+    }
+    .info-contato,
+    .formulario-contato {
+        width: 90%; /* Ocupa 90% da largura em tablets */
+        max-width: 600px; /* Limita a largura para não ficar muito grande */
+        margin-bottom: 30px; /* Espaçamento entre as caixas empilhadas */
+    }
+}
+
+/* Para telas menores que 768px (celulares) */
+@media (max-width: 768px) {
+    .secao-fale-conosco {
+        padding: 60px 0;
+    }
+    .secao-fale-conosco .titulo-secao {
+        font-size: 2em;
+    }
+    .secao-fale-conosco .subtitulo-secao {
+        font-size: 1em;
+        margin-bottom: 30px;
+        padding: 0 15px; /* Adiciona padding lateral para texto */
+    }
+    .info-contato,
+    .formulario-contato {
+        padding: 30px 20px; /* Reduz padding interno */
+    }
+    .info-contato h3,
+    .formulario-contato h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    .redes-sociais .icone-social {
+        font-size: 1.5em;
+        margin: 0 8px;
+    }
+    .btn-enviar-contato {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+/* Para telas muito pequenas (celulares pequenos) */
+@media (max-width: 480px) {
+    .secao-fale-conosco .titulo-secao {
+        font-size: 1.8em;
+    }
+    .info-contato p {
+        font-size: 0.95em;
+    }
+    .info-contato .icone-contato {
+        font-size: 1.1em;
+    }
+}
 
 /* -------------------- RESPONSIVIDADE -------------------- */
 @media (max-width: 900px) {
@@ -620,6 +846,72 @@ main {
     }
     .card-preco--apresenta:hover {
         transform: scale(1.08);
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .secao-fale-conosco .titulo-secao {
+        font-size: 2.5em;
+    }
+    .secao-fale-conosco .subtitulo-secao {
+        font-size: 1.1em;
+        margin-bottom: 40px;
+    }
+    .conteudo-fale-conosco {
+        flex-direction: column; /* Empilha as colunas */
+        align-items: center; /* Centraliza as caixas empilhadas */
+    }
+    .info-contato,
+    .formulario-contato {
+        width: 90%; /* Ocupa 90% da largura em tablets */
+        max-width: 600px; /* Limita a largura para não ficar muito grande */
+        margin-bottom: 30px; /* Espaçamento entre as caixas empilhadas */
+    }
+}
+
+/* Para telas menores que 768px (celulares) */
+@media (max-width: 768px) {
+    .secao-fale-conosco {
+        padding: 60px 0;
+    }
+    .secao-fale-conosco .titulo-secao {
+        font-size: 2em;
+    }
+    .secao-fale-conosco .subtitulo-secao {
+        font-size: 1em;
+        margin-bottom: 30px;
+        padding: 0 15px; /* Adiciona padding lateral para texto */
+    }
+    .info-contato,
+    .formulario-contato {
+        padding: 30px 20px; /* Reduz padding interno */
+    }
+    .info-contato h3,
+    .formulario-contato h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    .redes-sociais .icone-social {
+        font-size: 1.5em;
+        margin: 0 8px;
+    }
+    .btn-enviar-contato {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+/* Para telas muito pequenas (celulares pequenos) */
+@media (max-width: 480px) {
+    .secao-fale-conosco .titulo-secao {
+        font-size: 1.8em;
+    }
+    .info-contato p {
+        font-size: 0.95em;
+    }
+    .info-contato .icone-contato {
+        font-size: 1.1em;
     }
 }
 
