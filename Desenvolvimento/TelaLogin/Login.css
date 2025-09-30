@@ -21,7 +21,20 @@ body.pagina-login {
   position: relative;
 }
 
-/* Fundo com imagem escura */
+body.pagina-RecuperarSenha {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
 .fundo {
   position: fixed;
   top: 0;
@@ -44,9 +57,8 @@ body.pagina-login {
   padding: 40px 20px;
 }
 
-/* Caixa de login */
 .caixa-login {
-  background-color: rgba(50, 48, 48, 0.68);
+  background-color: rgba(31, 30, 30, 0.90);
   padding: 40px;
   border-radius: 12px;
   width: 100%;
@@ -77,8 +89,21 @@ body.pagina-login {
   color: var(--text-color);
 }
 
-.grupo-input input::placeholder {
-  color: #999;
+.grupo-input input:-webkit-autofill,
+.grupo-input input:-webkit-autofill:hover,
+.grupo-input input:-webkit-autofill:focus,
+.grupo-input input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1c1c1c inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
+}
+
+.caixa-login h5 {
+  color: #ccc; /* Cor um pouco mais suave */
+  font-weight: 400;
+  font-size: 0.9em;
+  margin-top: 0;
+  margin-bottom: 15px; /* Espaço antes do botão */
+  line-height: 1.4;
 }
 
 /* Olho da senha */
@@ -138,7 +163,7 @@ body.pagina-login {
 
 .login-social span {
   font-size: 0.9em;
-  color: #ccc;
+  color: #1c1c1c;
 }
 
 .icones-sociais {
