@@ -82,3 +82,20 @@ body.cadastro-page {
   color: #999;
 }
 
+
+/* Botão de cadastro */
+.btn-primary {
+  display: block;
+  margin: 20px auto;
+  padding: 13px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1c1c1c;
+  background-color: #00d070;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
