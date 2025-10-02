@@ -53,13 +53,18 @@ body.cadastro-page {
   width: 100%;
   max-width: 400px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-  text-align: center;
+  text-align: left;
 }
 
-.cadastro-box h1 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: var(--text-color);
+.cadastro-form h2 {
+    text-align: center;
+    margin-bottom: 30px; /* Mantendo a margem que parece estar no design */
+    color: var(--text-color);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* Inputs */
@@ -81,7 +86,6 @@ body.cadastro-page {
 .input-group input::placeholder {
   color: #999;
 }
-
 
 /* Botão de cadastro */
 .btn-primary {
