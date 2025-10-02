@@ -7,6 +7,42 @@
   --font-family: 'Poppins', sans-serif;
 }
 
+header {
+    width: 100%;
+    padding: 18px 0;
+    color: var(--text-color);
+    position: fixed; /* CHAVE: Fixa o menu na tela */
+    top: 0;          /* CHAVE: Alinha o menu no topo */
+    left: 0;
+    z-index: 2000;   /* Garante que fique acima do conteúdo de login */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end; /* Centraliza os links horizontalmente */
+    max-width: 1200px;
+}
+
+.main-nav li {
+    margin: 0 10px; /* Espaçamento entre os links */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color); /* Links em branco */
+    font-size: 1.0rem; 
+    font-weight: 400; 
+    padding: 5x 10px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
 body.pagina-login {
   background-color: var(--primary-color);
   color: var(--text-color);
