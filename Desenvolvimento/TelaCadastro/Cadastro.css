@@ -83,7 +83,7 @@ body.cadastro-page {
 
 /* Caixa de cadastro sem fundo branco */
 .cadastro-box {
-  background-color: rgba(31, 30, 30, 0.80); /* fundo escuro sólido, sem translucidez */
+  background-color: #191919; /* fundo sólido */
   padding: 40px;
   border-radius: 12px;
   width: 100%;
@@ -120,7 +120,7 @@ body.cadastro-page {
   border-radius: 8px;
   border: none;
   font-size: 16px;
-  background-color: #1c1c1c;
+  background-color: #252525;
   color: var(--text-color);
 }
 

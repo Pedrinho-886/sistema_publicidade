@@ -94,7 +94,7 @@ body.pagina-RecuperarSenha {
 }
 
 .caixa-login {
-  background-color: rgba(31, 30, 30, 0.80);
+  background-color: #191919;
   padding: 40px;
   border-radius: 12px;
   width: 100%;
@@ -121,7 +121,7 @@ body.pagina-RecuperarSenha {
   border-radius: 8px;
   border: none;
   font-size: 16px;
-  background-color: #1c1c1c;
+  background-color: #252525;
   color: var(--text-color);
 }
 
