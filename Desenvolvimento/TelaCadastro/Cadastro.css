@@ -11,10 +11,10 @@ header {
     width: 100%;
     padding: 18px 0;
     color: var(--text-color);
-    position: fixed; /* CHAVE: Fixa o menu na tela */
-    top: 0;          /* CHAVE: Alinha o menu no topo */
+    position: fixed;
+    top: 0;
     left: 0;
-    z-index: 2000;   /* Garante que fique acima do conteúdo de login */
+    z-index: 2000;
 }
 
 .main-nav ul {
@@ -22,17 +22,17 @@ header {
     padding: 0;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end; /* Centraliza os links horizontalmente */
+    justify-content: flex-end;
     max-width: 1200px;
 }
 
 .main-nav li {
-    margin: 0 10px; /* Espaçamento entre os links */
+    margin: 0 10px;
 }
 
 .main-nav a {
     text-decoration: none;
-    color: var(--text-color); /* Links em branco */
+    color: var(--text-color);
     font-size: 1.0rem; 
     font-weight: 400; 
     padding: 5x 10px;
@@ -72,7 +72,6 @@ body.cadastro-page {
 }
 
 /* Container principal */
-
 .login-container {
   display: flex;
   justify-content: center;
@@ -83,18 +82,22 @@ body.cadastro-page {
 
 /* Caixa de cadastro sem fundo branco */
 .cadastro-box {
-  background-color: #191919; /* fundo sólido */
+  background-color: #191919;
   padding: 40px;
   border-radius: 12px;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px; /* <--- REDUZIDO DE 400px PARA 350px */
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   text-align: left;
 }
 
+  .cadastro-box h1{
+        text-align: center;
+  }
+
 .cadastro-form h2 {
     text-align: center;
-    margin-bottom: 30px; /* Mantendo a margem que parece estar no design */
+    margin-bottom: 30px;
     color: var(--text-color);
 }
 
@@ -108,18 +111,18 @@ body.cadastro-page {
   transition: color 0.3s;
 }
 
-/* Inputs */
+/* Inputs Ajustados */
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px; 
   position: relative;
 }
 
 .input-group input {
   width: 100%;
-  padding: 14px;
-  border-radius: 8px;
+  padding: 11px; 
+  border-radius: 6px; 
   border: none;
-  font-size: 16px;
+  font-size: 15px; 
   background-color: #252525;
   color: var(--text-color);
 }
