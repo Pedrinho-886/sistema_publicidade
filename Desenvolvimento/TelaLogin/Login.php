@@ -4,7 +4,7 @@ session_start();
 //Redirecionamento se já estiver logado
 // Se o usuário já tiver uma sessão ativa, redirecione-o para a tela principal
 if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
-    header("Location: ../telaprincipal/telaprincipal.php");
+    header("Location: ../telaprincipal/telaprincipal.html");
     exit();
 }
 
@@ -17,7 +17,7 @@ define('DB_NAME', 'nexus_db');
 $mensagem_erro = '';
 $pdo = null;
 
-// 3. Tentar Conexão com o Banco de Dados
+//  Tentar Conexão com o Banco de Dados
 try {
     $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $pdo) {
                     $_SESSION['nome_usuario'] = $usuario['nome'];
                     
                     // Redireciona para a tela principal 
-                    header("Location: ../telaprincipal/telaprincipal.php"); 
+                    header("Location: ../telaprincipal/telaprincipal.html"); 
                     exit();
                     
                 } else {
