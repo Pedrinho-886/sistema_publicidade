@@ -1,0 +1,136 @@
+/* --- Seção Ferramentas do Dashboard --- */
+.secao-ferramentas {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.secao-ferramentas .titulo-secao {
+    font-size: 3em;
+    color: var(--accent-color); /* Título em verde neon */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.secao-ferramentas .subtitulo-secao {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grade de Cards de Ferramentas (CSS Grid para layout flexível) */
+.grade-ferramentas {
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* Estilo de Cada Card de Ferramenta */
+.card-ferramenta {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px var(--shadow-dark); 
+    text-align: center;
+    color: var(--text-color); 
+    text-decoration: none; 
+    display: flex; /* Flexbox para alinhar conteúdo interno */
+    flex-direction: column; /* Conteúdo empilhado */
+    align-items: center; /* Centraliza itens */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--border-light-on-dark); /* Borda sutil de destaque */
+    cursor: pointer;
+}
+
+.card-ferramenta:hover {
+    transform: translateY(-8px); /* Efeito de elevação */
+    box-shadow: 0 15px 35px var(--shadow-light-on-dark); 
+    border-color: var(--accent-color); 
+}
+
+.icone-ferramenta {
+    font-size: 3.5em; 
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.card-ferramenta:hover .icone-ferramenta {
+    color: #00d070; 
+}
+
+.titulo-ferramenta {
+    font-size: 1.5em;
+    color: var(--text-color); 
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.descricao-ferramenta {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.7); 
+    line-height: 1.5;
+}
+
+/* --- MEDIA QUERIES para Responsividade --- */
+
+@media (max-width: 1024px) {
+    .secao-ferramentas .titulo-secao {
+        font-size: 2.5em;
+    }
+    .secao-ferramentas .subtitulo-secao {
+        font-size: 1.1em;
+        margin-bottom: 40px;
+    }
+    .grade-ferramentas {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Reduz min-width, pode ter 2-3 colunas */
+        gap: 25px;
+    }
+    .card-ferramenta {
+        padding: 25px;
+    }
+    .icone-ferramenta {
+        font-size: 3em;
+    }
+    .titulo-ferramenta {
+        font-size: 1.3em;
+    }
+}
+
+/* Para telas menores que 768px (celulares) */
+@media (max-width: 768px) {
+    .secao-ferramentas {
+        padding: 60px 0;
+    }
+    .secao-ferramentas .titulo-secao {
+        font-size: 2em;
+    }
+    .secao-ferramentas .subtitulo-secao {
+        font-size: 1em;
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+    .grade-ferramentas {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    .card-ferramenta {
+        max-width: 90%;
+        margin: 0 auto; 
+    }
+    .icone-ferramenta {
+        font-size: 2.8em;
+    }
+    .titulo-ferramenta {
+        font-size: 1.2em;
+    }
+    .descricao-ferramenta {
+        font-size: 0.9em;
+    }
+}

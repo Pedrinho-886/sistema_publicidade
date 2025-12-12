@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gestão de Clientes — Plataforma</title>
+
+  <!-- Importa o CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div style="display:flex;flex-direction:column;">
+      <h1>Cadastro de Demanda</h1>
+      <p>Cadastro, anexos e acompanhamento do status das demandas</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card form-side" aria-labelledby="form-title">
+      <h2 id="form-title">Cadastrar / Editar Cliente</h2>
+
+      <form id="clientForm" onsubmit="return false;">
+        <label for="name">Nome</label>
+        <input id="name" type="text" placeholder="Nome completo" required>
+
+        <label for="company">Empresa</label>
+        <input id="company" type="text" placeholder="Nome da empresa">
+
+        <label for="cpf">CPF / CNPJ</label>
+        <input id="cpf" type="text" placeholder="CPF ou CNPJ">
+
+        <label for="phone">Telefone</label>
+        <input id="phone" type="tel" placeholder="(XX) XXXXX-XXXX">
+
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="seu@cliente.com">
+
+        <label for="notes">Observações</label>
+        <textarea id="notes" placeholder="Observações da demanda"></textarea>
+
+        <label for="status">Status da demanda</label>
+        <select id="status">
+          <option value="pendente">Pendente</option>
+          <option value="andamento" selected>Em Andamento</option>
+          <option value="concluido">Concluído</option>
+        </select>
+
+        <div style="display:flex; gap:10px; margin-top:12px;">
+          <button id="saveBtn" class="btn btn-primary">Adicionar Cliente</button>
+          <button id="resetBtn" class="btn btn-ghost" type="button">Limpar</button>
+        </div>
+
+    
+      </form>
+    </section>
+
+    <section class="card table-side" aria-labelledby="table-title">
+      <h2 id="table-title">Status das Demandas</h2>
+      <div style="overflow:auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="status">Em Andamento</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Importa o JS -->
+  <script src="script.js"></script>
+</body>
+</html>
